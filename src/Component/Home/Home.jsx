@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import slider1Image from '../../assets/imgslide/fundraising-charity-donation-illustration-with-volunteers-putting-coin-money-donate-box_2175-19132.avif'
 import slider2Image from '../../assets/imgslide/Family-Giving-689x450.jpg'
 import slider3Image from '../../assets/imgslide/istockphoto-1353332258-612x612.jpg'
+import RunningCampaigns from './RunningCampaigns';
 
 
 const Home = () => {
@@ -59,6 +60,8 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+                {/*Running Campaign  */}
+                <RunningCampaigns></RunningCampaigns>
 
             </div>
         </div>
