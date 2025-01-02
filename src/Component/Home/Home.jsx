@@ -3,6 +3,7 @@ import slider1Image from '../../assets/imgslide/fundraising-charity-donation-ill
 import slider2Image from '../../assets/imgslide/Family-Giving-689x450.jpg'
 import slider3Image from '../../assets/imgslide/istockphoto-1353332258-612x612.jpg'
 import RunningCampaigns from './RunningCampaigns';
+import Welcomemsg from './Welcomemsg';
 
 
 const Home = () => {
@@ -22,7 +23,8 @@ const Home = () => {
                         {darkMode ? "Light Mode" : "Dark Mode"}
                     </button>
                 </div>
-
+                {/* Welcome message */}
+                <Welcomemsg></Welcomemsg>
                 {/* Slider Section */}
                 <div className="carousel w-full">
                     <div id="slide1" className="carousel-item relative w-full">
