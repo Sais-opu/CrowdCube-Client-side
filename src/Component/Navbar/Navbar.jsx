@@ -23,7 +23,7 @@ const Navbar = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="" activeclassname="active">
+                <NavLink to="/campaigns" activeclassname="active">
                     All Campaign
                 </NavLink>
             </li>

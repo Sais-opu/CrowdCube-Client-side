@@ -9,6 +9,7 @@ import Register from './Component/Register/Register.jsx'
 import Login from './Component/Login/Login.jsx'
 import ErrorPage from './Component/Errorpage.jsx'
 import RunningCampaigns from './Component/Home/RunningCampaigns.jsx'
+import AllCampaigns from './assets/AllCampaign/AllCampaigns.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
       {
         path: '/register', element: <Register></Register>
       },
-      {path: '/running-campaigns', element: <RunningCampaigns></RunningCampaigns>}
+      { path: '/running-campaigns', element: <RunningCampaigns></RunningCampaigns> },
+      {path: '/campaigns', element:<AllCampaigns></AllCampaigns>}
     ]
   }
 ])
