@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, CardContent, Typography, Button, LinearProgress } from '@mui/material';
-import { AccessTime } from '@mui/icons-material';
 
 const AllCampaigns = () => {
     const [campaigns, setCampaigns] = useState([]);
@@ -18,51 +16,43 @@ const AllCampaigns = () => {
         navigate(`/campaign/${campaignId}`);
     };
 
-    const calculateTimeLeft = (deadline) => {
-        const deadlineDate = new Date(deadline);
-        const now = new Date();
-        const timeLeft = deadlineDate - now;
-        return Math.max(0, timeLeft); // Prevent negative progress
-    };
-
     return (
-        <div className="campaigns-list">
-            <h2>All Campaigns</h2>
-            <div className="campaign-cards-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
-                {campaigns.map((campaign) => (
-                    <Card key={campaign._id} sx={{ width: 300, cursor: 'pointer', boxShadow: 3, transition: 'transform 0.2s' }} 
-                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                        onClick={() => handleSeeMore(campaign._id)}
-                    >
-                        <CardContent>
-                            
-                            <img src={campaign.image} alt="" />
-                            <Typography variant="h6" component="div" sx={{ fontWeight: 'bold' }}>
-                                {campaign.campaignTitle}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary" sx={{ marginBottom: '10px' }}>
-                                {campaign.description.length > 80 ? `${campaign.description.slice(0, 80)}...` : campaign.description}
-                            </Typography>
-                            <LinearProgress 
-                                variant="determinate" 
-                                value={(100 * (calculateTimeLeft(campaign.deadline) / (new Date(campaign.deadline) - new Date(campaign.startDate))))} 
-                                sx={{ marginBottom: '10px' }} 
-                            />
-                            <Typography variant="body2" color="text.secondary">Donate before: 
-                                {new Date(campaign.deadline).toLocaleDateString()}
-                            </Typography>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                sx={{ marginTop: '10px' }}
-                                endIcon={<AccessTime />}
-                            >
-                                See More
-                            </Button>
-                        </CardContent>
-                    </Card>
-                ))}
+        <div className="md:px-32">
+            <h2 className="font-extrabold text-4xl my-6">All Campaigns</h2>
+            <div className="overflow-x-auto">
+                <table className="table-auto w-full border-collapse border border-gray-300">
+                    <thead className="bg-gray-200">
+                        <tr>
+                            <th className="border border-gray-300 px-4 py-2">Campaign Title</th>
+                            <th className="border border-gray-300 px-4 py-2">Description</th>
+                            <th className="border border-gray-300 px-4 py-2">Deadline</th>
+                            <th className="border border-gray-300 px-4 py-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {campaigns.map((campaign) => (
+                            <tr key={campaign._id} className="hover:bg-gray-100">
+                                <td className="border border-gray-300 px-4 py-2 font-semibold">{campaign.campaignTitle}</td>
+                                <td className="border border-gray-300 px-4 py-2">
+                                    {campaign.description.length > 100 
+                                        ? `${campaign.description.slice(0, 100)}...` 
+                                        : campaign.description}
+                                </td>
+                                <td className="border border-gray-300 px-4 py-2 text-center">
+                                    {new Date(campaign.deadline).toLocaleDateString()}
+                                </td>
+                                <td className="border border-gray-300 px-4 py-2 text-center">
+                                    <button
+                                        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                                        onClick={() => handleSeeMore(campaign._id)}
+                                    >
+                                        See More
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </div>
     );
