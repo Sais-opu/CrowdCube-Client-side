@@ -25,8 +25,9 @@ const CampaignDetails = () => {
             const donationData = {
                 campaignId: campaign._id,
                 userEmail: user.email,
-                userName: user.name,
+                userName: user.displayName,  
             };
+            
 
             fetch('http://localhost:5000/donate', {
                 method: 'POST',
