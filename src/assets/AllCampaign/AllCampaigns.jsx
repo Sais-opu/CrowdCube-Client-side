@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const AllCampaigns = () => {
     const [campaigns, setCampaigns] = useState([]);
+    const [sortOrder, setSortOrder] = useState('asc'); // Tracks the sort order (asc/desc)
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -12,13 +13,34 @@ const AllCampaigns = () => {
             .catch(err => console.error('Error fetching campaigns:', err));
     }, []);
 
+    // Function to toggle sort order and sort the campaigns
+    const handleSort = () => {
+        const sortedCampaigns = [...campaigns].sort((a, b) => {
+            if (sortOrder === 'asc') {
+                return a.minimumDonationAmount - b.minimumDonationAmount;
+            } else {
+                return b.minimumDonationAmount - a.minimumDonationAmount;
+            }
+        });
+        setCampaigns(sortedCampaigns);
+        setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc'); // Toggle sort order
+    };
+
     const handleSeeMore = (campaignId) => {
         navigate(`/campaign/${campaignId}`);
     };
 
     return (
-        <div className="md:px-32">
+        <div className="md:px-32 my-4">
             <h2 className="font-extrabold text-4xl my-6">All Campaigns</h2>
+            <div className="flex justify-between items-center mb-4">
+                <button
+                    onClick={handleSort}
+                    className="bg-green-600 text-white py-2 px-6 rounded hover:bg-green-700 transition duration-300"
+                >
+                    Sort by Minimum Donation ({sortOrder === 'asc' ? 'Ascending' : 'Descending'})
+                </button>
+            </div>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full border-collapse border border-gray-300">
                     <thead className="bg-gray-200">
@@ -26,6 +48,7 @@ const AllCampaigns = () => {
                             <th className="border border-gray-300 px-4 py-2">Campaign Title</th>
                             <th className="border border-gray-300 px-4 py-2">Description</th>
                             <th className="border border-gray-300 px-4 py-2">Deadline</th>
+                            <th className="border border-gray-300 px-4 py-2">Minimum Donation Amount</th>
                             <th className="border border-gray-300 px-4 py-2">Actions</th>
                         </tr>
                     </thead>
@@ -42,8 +65,11 @@ const AllCampaigns = () => {
                                     {new Date(campaign.deadline).toLocaleDateString()}
                                 </td>
                                 <td className="border border-gray-300 px-4 py-2 text-center">
+                                    {campaign.minimumDonationAmount}$
+                                </td>
+                                <td className="border border-gray-300 px-4 py-2 text-center">
                                     <button
-                                        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                                        className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
                                         onClick={() => handleSeeMore(campaign._id)}
                                     >
                                         See More
