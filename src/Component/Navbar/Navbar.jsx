@@ -31,7 +31,7 @@ const Navbar = () => {
             {user && user.displayName && (
                 <>
                     <li>
-                        <NavLink to="" activeclassname="active">
+                        <NavLink to="/addCampaign" activeclassname="active">
                             Add Mew Campaign
                         </NavLink>
                     </li>
