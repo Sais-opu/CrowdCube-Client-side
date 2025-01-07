@@ -1,26 +1,29 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/authProvider';
+import { useNavigate } from 'react-router-dom';
 
 const MyCampaign = () => {
     const [campaigns, setCampaigns] = useState([]);
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     const userEmail = user?.email;
-    console.log('User Email:', userEmail);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myCampaign?userEmail=${userEmail}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch campaigns');
-                }
-                return response.json();
-            })
-            .then(data => setCampaigns(data))
-            .catch(error => console.error('Error fetching campaigns:', error));
+        if (userEmail) {
+            fetch(`http://localhost:5000/myCampaign?userEmail=${userEmail}`)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch campaigns');
+                    }
+                    return response.json();
+                })
+                .then((data) => setCampaigns(data))
+                .catch((error) => console.error('Error fetching campaigns:', error));
+        }
     }, [userEmail]);
 
     const handleUpdate = (campaignId) => {
-        console.log('Update campaign:', campaignId);
+        navigate(`/updateCampaign/${campaignId}`); // Navigate to the update page with the campaign ID
     };
 
     const handleDelete = (campaignId) => {
@@ -28,16 +31,15 @@ const MyCampaign = () => {
             fetch(`http://localhost:5000/campaigns/${campaignId}`, {
                 method: 'DELETE',
             })
-                .then(response => {
+                .then((response) => {
                     if (!response.ok) {
                         throw new Error('Failed to delete campaign');
                     }
-                    setCampaigns(prev => prev.filter(c => c._id !== campaignId));
+                    setCampaigns((prev) => prev.filter((c) => c._id !== campaignId));
                 })
-                .catch(error => console.error('Error deleting campaign:', error));
+                .catch((error) => console.error('Error deleting campaign:', error));
         }
     };
-    
 
     return (
         <div className="my-campaigns">

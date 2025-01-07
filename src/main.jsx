@@ -13,6 +13,7 @@ import AllCampaigns from './assets/AllCampaign/AllCampaigns.jsx'
 import CampaignDetails from './Component/CampaignDetails/CampaignDetails.jsx'
 import AddCampaign from './Component/AddCampaign/AddCampaign.jsx'
 import MyCampaign from './Component/MyCampaign/MyCampaign.jsx'
+import UpdateCampaign from './Component/Update/updateCampaign.jsx'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
         path: '/myCampaign',
         element: <MyCampaign></MyCampaign>
       },
+      {path: '/updateCampaign/:id', element:<UpdateCampaign></UpdateCampaign>}
     ]
   }
 ])
