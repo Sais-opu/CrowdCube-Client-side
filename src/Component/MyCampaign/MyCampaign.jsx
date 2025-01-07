@@ -25,7 +25,7 @@ const MyCampaign = () => {
 
     const handleDelete = (campaignId) => {
         if (window.confirm('Are you sure you want to delete this campaign?')) {
-            fetch(`/campaigns/${campaignId}`, {
+            fetch(`http://localhost:5000/campaigns/${campaignId}`, {
                 method: 'DELETE',
             })
                 .then(response => {
@@ -37,6 +37,7 @@ const MyCampaign = () => {
                 .catch(error => console.error('Error deleting campaign:', error));
         }
     };
+    
 
     return (
         <div className="my-campaigns">
