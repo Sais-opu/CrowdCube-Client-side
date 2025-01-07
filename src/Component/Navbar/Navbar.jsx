@@ -36,7 +36,7 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="" activeclassname="active">
+                        <NavLink to="/myCampaign" activeclassname="active">
                             My Campaign
                         </NavLink>
                     </li>
