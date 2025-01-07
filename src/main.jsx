@@ -14,6 +14,8 @@ import CampaignDetails from './Component/CampaignDetails/CampaignDetails.jsx'
 import AddCampaign from './Component/AddCampaign/AddCampaign.jsx'
 import MyCampaign from './Component/MyCampaign/MyCampaign.jsx'
 import UpdateCampaign from './Component/Update/updateCampaign.jsx'
+import PrivateRoute from './Component/PrivateRoute.jsx'
+import Donation from './Donation.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,12 +31,13 @@ const router = createBrowserRouter([
       { path: '/running-campaigns', element: <RunningCampaigns></RunningCampaigns> },
       { path: '/campaigns', element: <AllCampaigns></AllCampaigns> },
       { path: '/campaign/:id', element: <CampaignDetails></CampaignDetails> },
-      { path: '/addCampaign', element: <AddCampaign></AddCampaign> },
+      { path: '/addCampaign', element: <PrivateRoute> <AddCampaign></AddCampaign></PrivateRoute> },
       {
         path: '/myCampaign',
-        element: <MyCampaign></MyCampaign>
+        element:<PrivateRoute> <MyCampaign></MyCampaign></PrivateRoute>
       },
-      {path: '/updateCampaign/:id', element:<UpdateCampaign></UpdateCampaign>}
+      { path: '/updateCampaign/:id', element: <UpdateCampaign></UpdateCampaign> },
+      {path: '/donation', element: <PrivateRoute><Donation></Donation></PrivateRoute>}
     ]
   }
 ])

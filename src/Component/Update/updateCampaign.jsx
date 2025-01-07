@@ -75,7 +75,7 @@ const UpdateCampaign = () => {
                     throw new Error('Failed to update campaign');
                 }
                 toast.success('Campaign updated successfully!');
-                navigate('/myCampaign'); // Redirect after success
+                navigate('/myCampaign');
             })
             .catch((error) => toast.error('Failed to update campaign.'));
     };
