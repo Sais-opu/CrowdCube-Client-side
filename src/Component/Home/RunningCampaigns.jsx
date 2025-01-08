@@ -6,7 +6,7 @@ const RunningCampaigns = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/running-campaigns')
+        fetch('https://crowd-serrver.vercel.app/running-campaigns')
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);

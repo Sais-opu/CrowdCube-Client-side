@@ -49,7 +49,7 @@ const AddCampaign = () => {
         setIsSubmitting(true);
 
         // Send the campaign data to the backend
-        fetch('http://localhost:5000/campaigns', {
+        fetch('https://crowd-serrver.vercel.app/campaigns', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

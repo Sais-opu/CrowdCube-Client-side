@@ -9,15 +9,15 @@ const AllCampaigns = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:5000/campaigns') // Adjust URL based on deployment
+        fetch('https://crowd-serrver.vercel.app/campaigns') 
             .then((res) => res.json())
             .then((data) => {
                 setCampaigns(data);
-                setIsLoading(false); // Stop loading when data is fetched
+                setIsLoading(false); 
             })
             .catch((err) => {
                 console.error('Error fetching campaigns:', err);
-                setIsLoading(false); // Stop loading even if there's an error
+                setIsLoading(false);
             });
     }, []);
 

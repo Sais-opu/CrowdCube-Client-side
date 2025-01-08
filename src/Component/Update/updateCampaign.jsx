@@ -28,7 +28,7 @@ const UpdateCampaign = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/updateCampaign/${id}`)
+        fetch(`https://crowd-serrver.vercel.app/updateCampaign/${id}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch campaign details');
@@ -63,7 +63,7 @@ const UpdateCampaign = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch(`http://localhost:5000/campaign/${id}`, {
+        fetch(`https://crowd-serrver.vercel.app/campaign/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
