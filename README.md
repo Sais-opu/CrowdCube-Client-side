@@ -27,6 +27,15 @@ CrowdCube is a dynamic crowdfunding platform that enables users to create, manag
 - **Notifications & Alerts**: React Toastify, SweetAlert2  
 
 ---
+## Additional Resources
+
+Here are some useful resources to help you understand the technologies used in this project:
+
+- [React.js Documentation](https://reactjs.org/docs/getting-started.html)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Firebase Authentication](https://firebase.google.com/docs/auth)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+  
 ## Project Setup
 Follow these steps to set up the project locally:
 
