@@ -27,23 +27,6 @@ CrowdCube is a dynamic crowdfunding platform that enables users to create, manag
 - **Notifications & Alerts**: React Toastify, SweetAlert2  
 
 ---
-## 🛠️ Setup Instructions  
-
-Follow these steps to set up the project locally:
-
-```sh
-# Clone the repository
-git clone https://github.com/Sais-opu/CrowdCube-Client-side.git
-
-# Navigate to the project folder
-cd CrowdCube-Client-side
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-
 
 ## 🛆 Dependencies  
 
@@ -69,4 +52,19 @@ The project uses the following dependencies:
 
 ---
 
+  
 
+Follow these steps to set up the project locally:
+
+```sh
+# Clone the repository
+git clone https://github.com/Sais-opu/CrowdCube-Client-side.git
+
+# Navigate to the project folder
+cd edumanage
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
