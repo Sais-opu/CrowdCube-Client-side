@@ -12,18 +12,6 @@ CrowdCube is a dynamic crowdfunding platform that enables users to create, manag
 
 ---
 
-## 📌 Table of Contents  
-
-- [🚀 Features](#-features)  
-- [🛠️ Technologies Used](#%EF%B8%8F-technologies-used)  
-- [📦 Dependencies](#-dependencies)  
-- [⚙️ Installation](#%EF%B8%8F-installation)  
-- [📖 Usage](#-usage)  
-- [📚 Additional Resources](#-additional-resources)  
-- [🤝 Contributors](#-contributors)  
-- [📜 License](#-license)  
-
----
 
 ## 🚀 Features  
 
