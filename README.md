@@ -1,8 +1,10 @@
 # 🏆 CrowdCube  
+![CrowdCube Banner](https://i.ibb.co/vCG8d5dr/crowd.png)  
+
 
 CrowdCube is a dynamic crowdfunding platform that enables users to create, manage, and contribute to fundraising campaigns. Whether it's for personal needs, creative projects, startups, or business ventures, CrowdCube ensures a seamless and user-friendly experience.  
 
-![CrowdCube Screenshot](https://i.ibb.co/vCG8d5dr/crowd.png)
+
 
 
 ## 🌍 Live Demo  
