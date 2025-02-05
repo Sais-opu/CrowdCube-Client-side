@@ -86,17 +86,4 @@ The project uses the following dependencies:
 
   
 
-Follow these steps to set up the project locally:
 
-```sh
-# Clone the repository
-git clone https://github.com/Sais-opu/CrowdCube-Client-side.git
-
-# Navigate to the project folder
-cd CrowdCube-Client-side
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
