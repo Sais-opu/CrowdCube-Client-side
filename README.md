@@ -31,7 +31,8 @@ CrowdCube is a dynamic crowdfunding platform that allows users to create, manage
 - **Backend**: Firebase, MongoBD
 - **Deployment**: Vercel, Netlify, Firebase Hosting  
 - **State Management & UI**: React Hooks, Emotion, Lottie, Vite 
-- **Notifications & Alerts**: React Toastify, SweetAlert2  
+- **Notifications & Alerts**: React Toastify, SweetAlert2
+- **Deployment**: Vercel, Firebase Hosting
 
 ---
 ## Additional Resources
