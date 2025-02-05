@@ -65,13 +65,4 @@ The project uses the following dependencies:
   "react-toastify": "^11.0.2",
   "sweetalert2": "^11.15.10"
 }
----
 
-## ⚙️ Installation  
-To run CrowdCube locally, follow these steps:  
-
-### 1️⃣ Clone the repository  
-
-```sh
-git clone https://github.com/your-username/crowdcube.git
-cd crowdcube
