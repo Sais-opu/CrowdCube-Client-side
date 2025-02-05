@@ -61,7 +61,7 @@ Follow these steps to set up the project locally:
 git clone https://github.com/Sais-opu/CrowdCube-Client-side.git
 
 # Navigate to the project folder
-cd edumanage
+cd CrowdCube-Client-side
 
 # Install dependencies
 npm install
