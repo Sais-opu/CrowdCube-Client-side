@@ -14,7 +14,7 @@ const CampaignDetails = () => {
             return;
         }
 
-        fetch(`https://crowd-serrver.vercel.app/campaign/${id}`)
+        fetch(`http://localhost:5000/campaign/${id}`)
             .then(res => res.json())
             .then(data => setCampaign(data))
             .catch(err => console.error('Error fetching campaign details:', err));
@@ -29,7 +29,7 @@ const CampaignDetails = () => {
             };
             
 
-            fetch('https://crowd-serrver.vercel.app/donate', {
+            fetch('http://localhost:5000/donate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

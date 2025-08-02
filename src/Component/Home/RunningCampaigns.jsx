@@ -6,7 +6,7 @@ const RunningCampaigns = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('https://crowd-serrver.vercel.app/running-campaigns')
+        fetch('http://localhost:5000/running-campaigns')
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
@@ -71,7 +71,7 @@ const RunningCampaigns = () => {
                                 <strong>Min Donation:</strong> $
                                 {campaign.minimumDonationAmount || 'N/A'}
                             </p>
-                            <button className="mt-4 px-4 py-2 bg-purple-600 text-white rounded-md">
+                            <button className="mt-4 px-4 py-2  bg-purple-600 text-white rounded-md">
                                 See More
                             </button>
                         </div>

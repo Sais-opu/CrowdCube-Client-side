@@ -9,7 +9,7 @@ const AllCampaigns = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('https://crowd-serrver.vercel.app/campaigns') 
+        fetch('http://localhost:5000/campaigns') 
             .then((res) => res.json())
             .then((data) => {
                 setCampaigns(data);

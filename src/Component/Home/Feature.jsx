@@ -6,7 +6,7 @@ import featureAnimation from './../Animation - 1735844390852.json';
 const Feature = () => {
     return (
         <div>
-            <section className="py-20 bg-purple-200">
+            <section className="py-20 bg-cyan-100">
                 <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
                     <div className="md:w-1/2">
                         <Lottie animationData={featureAnimation} loop={true} />
